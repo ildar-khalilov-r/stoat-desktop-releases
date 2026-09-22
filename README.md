@@ -9,8 +9,17 @@ downloaded anonymously, which the in-app updater and the instance's download pag
 ## What this is built from
 
 The client is a modified build of [`stoatchat/for-desktop`](https://github.com/stoatchat/for-desktop).
-The modifications are small: the build is pointed at a private instance, and the updater and
-publisher are pointed at this repository.
+The modifications are:
+
+- the build is pointed at a private instance, and the updater and publisher are pointed at this
+  repository;
+- the application is renamed and rebranded, with its own icons vendored in place of upstream's
+  `assets` submodule;
+- a native screen-capture path is added — a bundled GStreamer runtime and a sidecar process that
+  captures the desktop, encodes it on the GPU, and publishes it over WHIP, so that screen sharing
+  does not go through the browser engine's capture pipeline.
+
+Everything else is upstream's.
 
 ## Source
 
